@@ -1,7 +1,9 @@
+![Cyber Devence Homelab](/images/planung.png)
+
 # Projektplanung – DevSecOps Cyber-Defense Homelab (On-Premise)
 
 ## 1. Ausgangslage
-Im Homelab existiert eine segmentierte Netzwerkarchitektur mit VLANs (Virtual Local Area Network – virtuelle Netzsegmente) und einer FortiGate-Firewall. Ein Raspberry Pi betreibt einen DNS-Dienst (Domain Name System – Namensauflösung), ein Intel NUC (Linux, 12 GB RAM – Random Access Memory, Arbeitsspeicher) steht als Server zur Verfügung.
+Im Homelab existiert eine FortiGate-Firewall und ein Cisco Switch. Ein Raspberry Pi betreibt einen DNS-Dienst (Domain Name System – Namensauflösung), ein Intel NUC (Linux, 12 GB RAM – Random Access Memory, Arbeitsspeicher) steht als Server zur Verfügung.
 
 ## 2. Projektidee
 Aufbau eines lokalen Cyber-Defense Labs (SOC-Light – Security Operations Center, Mini-Sicherheitsbetrieb), bei dem Services, Firewall-Policies und Angriffssimulationen vollständig **code-basiert** aus Git reproduzierbar deployt werden (DevSecOps – Development Security Operations).

@@ -1,5 +1,5 @@
 
-![TBZ Banner](/images/logo.png)
+![Obababobubazpinguin](/images/logo.png)
 
 # M300 Repository
 
