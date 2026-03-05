@@ -139,3 +139,8 @@ Implementierung einer reproduzierbaren, lokalen DevSecOps-Umgebung, in der:
 - **E2 Betrieb & Überwachung**: Betriebskonzept, Wartung, Monitoring, Alerts
 - **F1 Fehleranalyse**: Testfälle, Loganalyse, RCA
 - **I1 Dokumentation**: Diagramme, Prozesse, reproduzierbare Anleitungen
+
+
+
+## Zusatzziele Eventuell
+- Honeypot
