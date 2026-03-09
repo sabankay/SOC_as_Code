@@ -37,19 +37,40 @@ Implementierung einer reproduzierbaren, lokalen DevSecOps-Umgebung, in der:
 
 ## 5. Projektumfang / Deliverables (Abgabe)
 
-### 5.1 Repository-Struktur (Beispiel)
-- `docs/`  
-  - Architekturdiagramm, Netzwerkdiagramm, Betriebskonzept, Testprotokolle
-- `services/`  
-  - `docker-compose.yml`, Konfigurationen (z.B. Reverse Proxy / SIEM Komponenten)
-- `policies/`  
-  - Firewall-Policies als Code + Apply-Script
-- `attacks/`  
-  - Angriffssimulationen als Compose-Jobs / Scripts
-- `pipeline/`  
-  - CI/CD Konfiguration (z.B. `.gitlab-ci.yml` oder Actions Workflow)
-- `evidence/`  
-  - Nachweise pro Testlauf (Screenshots/Logs/Reports)
+### 5.1 Repository-Struktur
+
+defense-lab-soc/
+├── README.md
+├── .gitignore
+├── docs/
+│   ├── architecture.md
+│   ├── deployment.md
+│   └── use-cases.md
+├── services/
+│   ├── compose.yml
+│   ├── grafana/
+│   │   └── provisioning/
+│   ├── loki/
+│   │   └── config.yml
+│   ├── promtail/
+│   │   └── config.yml
+│   └── syslog-ng/
+│       └── syslog-ng.conf
+├── scripts/
+│   ├── deploy.sh
+│   ├── stop.sh
+│   ├── logs.sh
+│   └── healthcheck.sh
+├── attacks/
+│   ├── README.md
+│   └── scenarios/
+├── policies/
+│   ├── README.md
+│   └── fortigate/
+├── evidence/
+│   └── .gitkeep
+└── pipeline/
+    └── gitea-actions.yml
 
 ### 5.2 Technische Deliverables
 - Lauffähiger Deployment-Prozess auf Intel NUC (Linux).
