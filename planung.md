@@ -38,7 +38,7 @@ Implementierung einer reproduzierbaren, lokalen DevSecOps-Umgebung, in der:
 ## 5. Projektumfang / Deliverables (Abgabe)
 
 ### 5.1 Repository-Struktur
-
+```
 defense-lab-soc/
 ├── README.md
 ├── .gitignore
@@ -71,6 +71,7 @@ defense-lab-soc/
 │   └── .gitkeep
 └── pipeline/
     └── gitea-actions.yml
+```
 
 ### 5.2 Technische Deliverables
 - Lauffähiger Deployment-Prozess auf Intel NUC (Linux).
