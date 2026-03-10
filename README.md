@@ -7,6 +7,7 @@
 - [Planung](planung.md)
 - [Tages Journals](/Journal)
 - [Scrips](/scripts/)
+- [Dokumentation](/Dokumentation/)
 
 
 ---
