@@ -125,20 +125,22 @@ defense-lab-soc/
 - Pipeline für `docker compose up -d` implementieren
 - Erfolgstest: Ein Commit deployt Services reproduzierbar
 
-### M3 – Policy-as-Code FortiGate (Woche 5–7)
+### M3 – Monitoring, Auswertung, Dokumentation, HIDS (Woche 5-7)
+- Dashboards/Reports erstellen
+- Host based intrusion detection system einfügen
+- Pro Use Case: Ablauf + Nachweis + Ergebnis + Root Cause Analysis (RCA – Ursachenanalyse)
+
+### M4 – Policy-as-Code FortiGate (Woche 8–9)
 - Policies definieren (3–5 Kernregeln)
 - Apply-Script (API) implementieren
 - Logging / Change Nachweis (Changelog, Screenshots)
 
-### M4 – Attack-as-Code (Woche 8–9)
+### M5 – Attack-as-Code (Woche 10-12)
 - 3 Simulationen als Containerjobs/Compose definieren
 - Start/Stop automatisieren (manuell oder Pipeline Stage)
 - Evidenzen sammeln (Logs/Screenshots)
 
-### M5 – Monitoring, Auswertung, Dokumentation (Woche 10–12)
-- Dashboards/Reports erstellen
-- Pro Use Case: Ablauf + Nachweis + Ergebnis + Root Cause Analysis (RCA – Ursachenanalyse)
-- Abschlussfazit, Lessons Learned (Lernerfahrungen)
+
 
 ## 9. Risiken & Gegenmassnahmen
 - **Ressourcenlimit (12 GB RAM)**: Services schlank halten, nicht zu viele Komponenten gleichzeitig.
@@ -160,9 +162,4 @@ defense-lab-soc/
 - **E1 Service-Integration**: GitOps, Compose-Services, Schnittstellen (API)
 - **E2 Betrieb & Überwachung**: Betriebskonzept, Wartung, Monitoring, Alerts
 - **F1 Fehleranalyse**: Testfälle, Loganalyse, RCA
-- **I1 Dokumentation**: Diagramme, Prozesse, reproduzierbare Anleitungen
-
-
-
-## Zusatzziele Eventuell
-- Honeypot
+- **I1 Dokumentation**: Diagramme, Prozesse
