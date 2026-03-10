@@ -40,37 +40,42 @@ Implementierung einer reproduzierbaren, lokalen DevSecOps-Umgebung, in der:
 ### 5.1 Repository-Struktur
 ```
 defense-lab-soc/
-├── README.md
-├── .gitignore
-├── docs/
-│   ├── architecture.md
-│   ├── deployment.md
-│   └── use-cases.md
-├── services/
-│   ├── compose.yml
-│   ├── grafana/
-│   │   └── provisioning/
-│   ├── loki/
-│   │   └── config.yml
-│   ├── promtail/
-│   │   └── config.yml
-│   └── syslog-ng/
-│       └── syslog-ng.conf
+├── .gitea/
+│   └── workflows/
+│       ├── deploy-nuc.yml
+│       ├── deploy-pi.yml
+│       └── deploy-fortigate.yml
+├── hosts/
+│   ├── nuc/
+│   │   ├── compose.yml
+│   │   ├── grafana/
+│   │   ├── loki/
+│   │   ├── promtail/
+│   │   └── syslog-ng/
+│   ├── raspberrypi/
+│   │   ├── compose.yml
+│   │   ├── pihole/
+│   │   └── agent/
+│   └── fortigate/
+│       └── README.md
+├── policies/
+│   └── fortigate/
+│       ├── address-objects/
+│       ├── service-objects/
+│       └── firewall-policies/
 ├── scripts/
-│   ├── deploy.sh
-│   ├── stop.sh
-│   ├── logs.sh
-│   └── healthcheck.sh
+│   ├── deploy-nuc.sh
+│   ├── deploy-pi.sh
+│   ├── apply-fortigate-policies.sh
+│   ├── healthcheck.sh
+│   └── logs.sh
 ├── attacks/
 │   ├── README.md
 │   └── scenarios/
-├── policies/
-│   ├── README.md
-│   └── fortigate/
+├── docs/
 ├── evidence/
-│   └── .gitkeep
-└── pipeline/
-    └── gitea-actions.yml
+├── README.md
+└── .gitignore
 ```
 
 ### 5.2 Technische Deliverables
