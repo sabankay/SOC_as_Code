@@ -49,9 +49,18 @@ defense-lab-soc/
 │   ├── nuc/
 │   │   ├── compose.yml
 │   │   ├── grafana/
+│   │   │   └── provisioning/
+│   │   │       ├── datasources/
+│   │   │       │   └── loki.yml
+│   │   │       └── dashboards/
+│   │   │           └── dashboards.yml
 │   │   ├── loki/
+│   │   │   └── config.yml
 │   │   ├── promtail/
+│   │   │   └── config.yml
 │   │   └── syslog-ng/
+│   │       ├── syslog-ng.conf
+│   │       └── logs/
 │   ├── raspberrypi/
 │   │   ├── compose.yml
 │   │   ├── pihole/
@@ -68,6 +77,7 @@ defense-lab-soc/
 │   ├── deploy-pi.sh
 │   ├── apply-fortigate-policies.sh
 │   ├── healthcheck.sh
+|   ├── hids.py
 │   └── logs.sh
 ├── attacks/
 │   ├── README.md
