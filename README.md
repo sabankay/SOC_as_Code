@@ -237,50 +237,103 @@ Implementierung eines reproduzierbaren lokalen DevSecOps Cyber-Defense Labs, in 
 defense-lab-soc/
 ├── .gitea/
 │   └── workflows/
+│       ├── deploy-fortigate.yml
 │       ├── deploy-nuc.yml
-│       ├── deploy-pi.yml
-│       └── deploy-fortigate.yml
+│       └── deploy-pi.yml
+├── attacks/
+│   ├── README.md
+│   ├── scenarios/
+│   │   └── .gitkeep
+│   ├── atomic-red-team/
+│   │   └── attacks/
+│   │       └── atomic-red-team/
+│   │           ├── atomics/
+│   │           ├── atomic_red_team/
+│   │           ├── bin/
+│   │           ├── static/
+│   │           └── README.md
+│   └── atomic-validator/
+│       ├── Dockerfile
+│       ├── README.md
+│       ├── requirements.txt
+│       ├── agent/
+│       │   ├── README.md
+│       │   └── run_agent.py
+│       ├── app/
+│       │   ├── __init__.py
+│       │   ├── common.py
+│       │   ├── config.py
+│       │   ├── db.py
+│       │   ├── inventory.py
+│       │   ├── server.py
+│       │   ├── threats.py
+│       │   └── worker.py
+│       ├── config/
+│       │   └── policy.yml
+│       ├── inventory/
+│       │   ├── .gitkeep
+│       │   └── linux_inventory.json
+│       └── scripts/
+│           ├── __init__.py
+│           └── generate_inventory.py
+├── docs/
+│   └── .gitkeep
+├── evidence/
+│   └── .gitkeep
 ├── hosts/
+│   ├── fortigate/
+│   │   └── README.md
 │   ├── nuc/
 │   │   ├── compose.yml
+│   │   ├── atomic-validator/
+│   │   │   └── data/
+│   │   │       └── .gitkeep
 │   │   ├── grafana/
 │   │   │   └── provisioning/
-│   │   │       ├── datasources/
-│   │   │       │   └── loki.yml
-│   │   │       └── dashboards/
-│   │   │           └── dashboards.yml
+│   │   │       ├── dashboards/
+│   │   │       │   └── dashboards.yml
+│   │   │       └── datasources/
+│   │   │           └── loki.yml
 │   │   ├── loki/
 │   │   │   └── config.yml
 │   │   ├── promtail/
 │   │   │   └── config.yml
-│   │   └── syslog-ng/
-│   │       ├── syslog-ng.conf
-│   │       └── logs/
-│   ├── raspberrypi/
-│   │   ├── compose.yml
-│   │   ├── pihole/
-│   │   └── agent/
-│   └── fortigate/
-│       └── README.md
+│   │   ├── suricata/
+│   │   │   ├── logs/
+│   │   │   │   └── .gitignore
+│   │   │   ├── rules/
+│   │   │   │   └── suricata.rules
+│   │   │   └── suricata.yaml
+│   │   ├── syslog-ng/
+│   │   │   ├── logs/
+│   │   │   │   └── .gitkeep
+│   │   │   └── syslog-ng.conf
+│   │   └── wazuh/
+│   │       ├── indexer/
+│   │       └── manager/
+│   └── rasberrypi/
+│       ├── compose.yml
+│       ├── agent/
+│       │   └── promtail-config.yml
+│       └── pihole/
+│           ├── setupVars.conf
+│           ├── etc-dnsmasq.d/
+│           │   └── .gitkeep
+│           └── etc-pihole/
+│               ├── .gitkeep
+│               └── custom.list
 ├── policies/
 │   └── fortigate/
-│       ├── address-objects/
-│       ├── service-objects/
-│       └── firewall-policies/
+│       └── .gitkeep
 ├── scripts/
+│   ├── deploy-fortigate-policies.sh
 │   ├── deploy-nuc.sh
 │   ├── deploy-pi.sh
-│   ├── apply-fortigate-policies.sh
 │   ├── healthcheck.sh
-|   ├── hids.py
+│   ├── hids.py
 │   └── logs.sh
-├── attacks/
-│   ├── README.md
-│   └── scenarios/
-├── docs/
-├── evidence/
-├── README.md
-└── .gitignore
+├── .gitignore
+└── README.md
 ```
 
 ---
