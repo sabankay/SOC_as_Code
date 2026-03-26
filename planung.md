@@ -61,7 +61,7 @@ defense-lab-soc/
 │   │   └── syslog-ng/
 │   │       ├── syslog-ng.conf
 │   │       └── logs/
-│   ├── raspberrypi/
+│   ├── rasberrypi/
 │   │   ├── compose.yml
 │   │   ├── pihole/
 │   │   └── agent/
