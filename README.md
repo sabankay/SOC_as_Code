@@ -231,109 +231,129 @@ Implementierung eines reproduzierbaren lokalen DevSecOps Cyber-Defense Labs, in 
 
 ---
 
-# Repository-Struktur
+# Production Repository-Struktur
 
 ```text
-defense-lab-soc/
-├── .gitea/
-│   └── workflows/
-│       ├── deploy-fortigate.yml
-│       ├── deploy-nuc.yml
-│       └── deploy-pi.yml
-├── attacks/
-│   ├── README.md
-│   ├── scenarios/
-│   │   └── .gitkeep
-│   ├── atomic-red-team/
-│   │   └── attacks/
-│   │       └── atomic-red-team/
-│   │           ├── atomics/
-│   │           ├── atomic_red_team/
-│   │           ├── bin/
-│   │           ├── static/
-│   │           └── README.md
-│   └── atomic-validator/
-│       ├── Dockerfile
-│       ├── README.md
-│       ├── requirements.txt
-│       ├── agent/
-│       │   ├── README.md
-│       │   └── run_agent.py
-│       ├── app/
-│       │   ├── __init__.py
-│       │   ├── common.py
-│       │   ├── config.py
-│       │   ├── db.py
-│       │   ├── inventory.py
-│       │   ├── server.py
-│       │   ├── threats.py
-│       │   └── worker.py
-│       ├── config/
-│       │   └── policy.yml
-│       ├── inventory/
-│       │   ├── .gitkeep
-│       │   └── linux_inventory.json
-│       └── scripts/
-│           ├── __init__.py
-│           └── generate_inventory.py
-├── docs/
-│   └── .gitkeep
-├── evidence/
-│   └── .gitkeep
-├── hosts/
-│   ├── fortigate/
-│   │   └── README.md
-│   ├── nuc/
-│   │   ├── compose.yml
-│   │   ├── atomic-validator/
-│   │   │   └── data/
-│   │   │       └── .gitkeep
-│   │   ├── grafana/
-│   │   │   └── provisioning/
-│   │   │       ├── dashboards/
-│   │   │       │   └── dashboards.yml
-│   │   │       └── datasources/
-│   │   │           └── loki.yml
-│   │   ├── loki/
-│   │   │   └── config.yml
-│   │   ├── promtail/
-│   │   │   └── config.yml
-│   │   ├── suricata/
-│   │   │   ├── logs/
-│   │   │   │   └── .gitignore
-│   │   │   ├── rules/
-│   │   │   │   └── suricata.rules
-│   │   │   └── suricata.yaml
-│   │   ├── syslog-ng/
-│   │   │   ├── logs/
-│   │   │   │   └── .gitkeep
-│   │   │   └── syslog-ng.conf
-│   │   └── wazuh/
-│   │       ├── indexer/
-│   │       └── manager/
-│   └── rasberrypi/
-│       ├── compose.yml
-│       ├── agent/
-│       │   └── promtail-config.yml
-│       └── pihole/
-│           ├── setupVars.conf
-│           ├── etc-dnsmasq.d/
-│           │   └── .gitkeep
-│           └── etc-pihole/
-│               ├── .gitkeep
-│               └── custom.list
-├── policies/
-│   └── fortigate/
-│       └── .gitkeep
-├── scripts/
-│   ├── deploy-fortigate-policies.sh
-│   ├── deploy-nuc.sh
-│   ├── deploy-pi.sh
-│   ├── healthcheck.sh
-│   ├── hids.py
-│   └── logs.sh
-├── .gitignore
-└── README.md
+Defense_Lab
+|-- .gitea
+|   \-- workflows
+|       |-- deploy-fortigate.yml
+|       |-- deploy-nuc.yml
+|       \-- deploy-pi.yml
+|-- attacks
+|   |-- atomic-red-team
+|   |-- atomic-validator
+|   |   |-- agent
+|   |   |   |-- README.md
+|   |   |   \-- run_agent.py
+|   |   |-- app
+|   |   |   |-- __init__.py
+|   |   |   |-- common.py
+|   |   |   |-- config.py
+|   |   |   |-- db.py
+|   |   |   |-- inventory.py
+|   |   |   |-- server.py
+|   |   |   |-- threats.py
+|   |   |   \-- worker.py
+|   |   |-- config
+|   |   |   \-- policy.yml
+|   |   |-- inventory
+|   |   |   |-- .gitkeep
+|   |   |   \-- linux_inventory.json
+|   |   |-- scripts
+|   |   |   |-- __init__.py
+|   |   |   \-- generate_inventory.py
+|   |   |-- Dockerfile
+|   |   |-- README.md
+|   |   \-- requirements.txt
+|   |-- scenarios
+|   \-- README.md
+|-- docs
+|   |-- architecture.md
+|   |-- deployment.md
+|   \-- use-cases.md
+|-- hosts
+|   |-- fortigate
+|   |-- nuc
+|   |   |-- atomic-validator
+|   |   |   \-- data
+|   |   |-- auditd
+|   |   |   |-- 50-defense-lab.rules
+|   |   |   \-- README.md
+|   |   |-- grafana
+|   |   |   \-- provisioning
+|   |   |       |-- dashboards
+|   |   |       |   \-- dashboards.yml
+|   |   |       \-- datasources
+|   |   |           \-- loki.yml
+|   |   |-- loki
+|   |   |   \-- config.yml
+|   |   |-- promtail
+|   |   |   \-- config.yml
+|   |   |-- suricata
+|   |   |   |-- logs
+|   |   |   |-- rules
+|   |   |   |   \-- suricata.rules
+|   |   |   \-- suricata.yaml
+|   |   |-- syslog-ng
+|   |   |   |-- logs
+|   |   |   \-- syslog-ng.conf
+|   |   |-- wazuh
+|   |   |   |-- config
+|   |   |   |   |-- wazuh_cluster
+|   |   |   |   |   \-- wazuh_manager.conf
+|   |   |   |   |-- wazuh_dashboard
+|   |   |   |   |-- wazuh_indexer
+|   |   |   |   |   |-- internal_users.yml
+|   |   |   |   |   \-- wazuh.indexer.yml
+|   |   |   |   \-- certs.yml
+|   |   |   |-- indexer
+|   |   |   |-- manager
+|   |   |   |   |-- decoders
+|   |   |   |   |   \-- .gitkeep
+|   |   |   |   |-- lists
+|   |   |   |   |   \-- .gitkeep
+|   |   |   |   |-- rules
+|   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   \-- 100200-linux-atomic-audit_rules.xml
+|   |   |   |   \-- README.md
+|   |   |   |-- runtime
+|   |   |   \-- upstream
+|   |   |       \-- v4.14.4
+|   |   |           \-- ruleset
+|   |   |               |-- decoders
+|   |   |               |   \-- ...
+|   |   |               |-- lists
+|   |   |               |   \-- ...
+|   |   |               |-- mitre
+|   |   |               |   \-- ...
+|   |   |               |-- rootcheck
+|   |   |               |   \-- ...
+|   |   |               |-- rules
+|   |   |               |   \-- ...
+|   |   |               |-- sca
+|   |   |               |   \-- ...
+|   |   |               |-- testing
+|   |   |               |   \-- ...
+|   |   |               \-- README.md
+|   |   \-- compose.yml
+|   \-- rasberrypi
+|       |-- agent
+|       |   \-- promtail-config.yml
+|       |-- pihole
+|       |   |-- etc-dnsmasq.d
+|       |   |   \-- .gitkeep
+|       |   |-- etc-pihole
+|       |   |   \-- custom.list
+|       |   \-- setupVars.conf
+|       \-- compose.yml
+|-- .gitignore
+|-- .gitmodules
+|-- directory-tree-clean.txt
+|-- directory-tree-focused.txt
+|-- directory-tree.txt
+\-- README.md
+
 ```
 
 ---
