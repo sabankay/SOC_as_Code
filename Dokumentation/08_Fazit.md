@@ -1,0 +1,7 @@
+# Fazit
+
+Im Verlauf des Projekts ist gut gelaufen, dass aus einer anfänglichen Idee Schritt für Schritt ein funktionierendes und reproduzierbares Homelab entstanden ist. Wichtige Bausteine wie der VPN-Zugang, der Git-Server mit HTTPS, die Deployment-Pipeline, der Monitoring-Stack und später auch der Atomic Validator konnten erfolgreich umgesetzt werden. Besonders positiv ist, dass nicht nur neue Funktionen aufgebaut wurden, sondern der Betrieb später auch gezielt verbessert wurde, zum Beispiel mit Secrets-Auslagerung, Healthchecks, festen Versionen und Validierung vor dem Deploy.
+
+Probleme gab es vor allem bei der Infrastruktur und bei der Zuverlässigkeit einzelner Komponenten. Am Anfang war die Zielsetzung noch nicht ganz klar, später gab es Netzwerkprobleme beim WireGuard-Zugang, Schwierigkeiten mit dem selbst signierten Zertifikat beim Git-Server und einen längeren Blocker beim Raspberry Pi, weil die SD-Karte defekt war. Auch im Monitoring zeigte sich, dass ausgeführte Tests nicht automatisch bedeuten, dass die Detection sauber nachweisbar ist. Erst durch Anpassungen am Logging, an der Inventory-Logik und an der Visualisierung wurde der Ablauf stabiler.
+
+Insgesamt zeigt das Projekt, dass technische Umsetzung, Fehlersuche und laufende Verbesserung eng zusammengehören. Gerade die aufgetretenen Probleme haben geholfen, das Homelab am Ende robuster, besser strukturiert und nachvollziehbarer zu machen.
