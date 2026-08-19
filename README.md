@@ -1,7 +1,7 @@
 
 ![Obababobubazpinguin](/images/logo.png)
 
-# M300 - Cyber Defense Lab
+# Cyber Defense Lab - Soc as Code
 
 ## Inhalt des Repos
 - [Planung](planung.md)
